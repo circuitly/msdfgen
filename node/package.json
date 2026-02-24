@@ -1,6 +1,6 @@
 {
     "name": "@circuitly/msdfgen",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Native Node.js N-API addon wrapping libmsdfgen for MSDF generation",
     "main": "index.js",
     "types": "index.d.ts",
@@ -12,7 +12,7 @@
         "CMakeLists.txt"
     ],
     "scripts": {
-        "install": "node-gyp-build || cmake-js compile",
+        "install": "node-gyp-build",
         "build": "cmake-js compile",
         "rebuild": "cmake-js rebuild",
         "prebuild": "prebuildify --napi --strip",
