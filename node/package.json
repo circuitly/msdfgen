@@ -1,0 +1,42 @@
+{
+    "name": "@circuitly/msdfgen",
+    "version": "1.0.0",
+    "description": "Native Node.js N-API addon wrapping libmsdfgen for MSDF generation",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "files": [
+        "index.js",
+        "index.d.ts",
+        "prebuilds/",
+        "src/",
+        "CMakeLists.txt"
+    ],
+    "scripts": {
+        "install": "node-gyp-build || cmake-js compile",
+        "build": "cmake-js compile",
+        "rebuild": "cmake-js rebuild",
+        "prebuild": "prebuildify --napi --strip",
+        "test": "jest --config jest.config.json"
+    },
+    "dependencies": {
+        "node-addon-api": "^7.1.0",
+        "node-gyp-build": "^4.8.0"
+    },
+    "devDependencies": {
+        "cmake-js": "^7.3.0",
+        "prebuildify": "^6.0.0",
+        "@types/node": "^20.0.0",
+        "jest": "^29.0.0",
+        "@types/jest": "^29.0.0",
+        "ts-jest": "^29.0.0",
+        "typescript": "^5.0.0"
+    },
+    "binary": {
+        "napi_versions": [8]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/circuitly/msdfgen"
+    },
+    "license": "MIT"
+}

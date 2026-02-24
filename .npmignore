@@ -1,0 +1,16 @@
+# Only publish the node/ package contents
+# Exclude msdfgen source (only needed for from-source builds)
+ext/
+cmake/
+.github/
+main.cpp
+msdfgen-ext.h
+msdfgen.rc
+resource.h
+icon.ico
+CMakePresets.json
+Dockerfile
+vcpkg.json
+CHANGELOG.md
+README.md
+LICENSE.txt
