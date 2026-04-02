@@ -52,3 +52,20 @@ export interface Shape {
  * @returns Buffer of raw RGB pixel data.
  */
 export function generateMSDF(shape: Shape, options: MSDFGenOptions): Buffer
+
+/**
+ * Generate a Multi-channel True Signed Distance Field (MTSDF) bitmap from a vector shape.
+ *
+ * Returns a Buffer containing raw RGBA pixel data (4 bytes per pixel, row-major,
+ * top-to-bottom). Buffer length = width * height * 4.
+ *
+ * RGB channels contain the multi-channel SDF (same as generateMSDF) for sharp corner
+ * rendering. The alpha channel contains a true single-channel SDF for use as a fallback
+ * at small screen sizes where the multi-channel median becomes unstable under bilinear
+ * texture filtering.
+ *
+ * @param shape - The vector shape defined as contours with edge segments.
+ * @param options - Generation parameters (scale, range, translate, dimensions).
+ * @returns Buffer of raw RGBA pixel data (RGB = MSDF, A = true SDF).
+ */
+export function generateMTSDF(shape: Shape, options: MSDFGenOptions): Buffer
